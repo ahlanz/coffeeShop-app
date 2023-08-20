@@ -53,79 +53,82 @@ class ProductCoffee extends StatelessWidget {
         itemBuilder: (context, int index) {
           return Container(
             margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 24),
-            child: Container(
-              width: 149,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
-                    children: [
-                      Image.asset(
-                        '${item[index]['gambar']}',
-                        fit: BoxFit.cover,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              'assets/rating.png',
-                              width: 10,
-                            ),
-                            const SizedBox(
-                              width: 2,
-                            ),
-                            Text(
-                              '${item[index]['rating']}',
-                              style: whiteTextStyle.copyWith(
-                                fontSize: 10,
-                                fontWeight: semiBold,
-                              ),
-                            )
-                          ],
+            child: GestureDetector(
+              onTap: () => Navigator.pushNamed(context, '/detail-product'),
+              child: Container(
+                width: 149,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: [
+                        Image.asset(
+                          '${item[index]['gambar']}',
+                          fit: BoxFit.cover,
                         ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Text(
-                    '${item[index]['name']}',
-                    overflow: TextOverflow.ellipsis,
-                    style: primaryTextStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: semiBold,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Image.asset(
+                                'assets/rating.png',
+                                width: 10,
+                              ),
+                              const SizedBox(
+                                width: 2,
+                              ),
+                              Text(
+                                '${item[index]['rating']}',
+                                style: whiteTextStyle.copyWith(
+                                  fontSize: 10,
+                                  fontWeight: semiBold,
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
                     ),
-                  ),
-                  Text(
-                    'with Chocolate',
-                    style: primaryTextStyle.copyWith(
-                      fontSize: 12,
-                      fontWeight: regular,
+                    const SizedBox(
+                      height: 12,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'Rp ${item[index]['harga']}',
-                          style: primaryTextStyle.copyWith(
-                            fontSize: 16,
-                            fontWeight: semiBold,
+                    Text(
+                      '${item[index]['name']}',
+                      overflow: TextOverflow.ellipsis,
+                      style: primaryTextStyle.copyWith(
+                        fontSize: 18,
+                        fontWeight: semiBold,
+                      ),
+                    ),
+                    Text(
+                      'with Chocolate',
+                      style: primaryTextStyle.copyWith(
+                        fontSize: 12,
+                        fontWeight: regular,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'Rp ${item[index]['harga']}',
+                            style: primaryTextStyle.copyWith(
+                              fontSize: 16,
+                              fontWeight: semiBold,
+                            ),
                           ),
                         ),
-                      ),
-                      Image.asset(
-                        'assets/button_add.png',
-                        width: 32,
-                      )
-                    ],
-                  )
-                ],
+                        Image.asset(
+                          'assets/button_add.png',
+                          width: 32,
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           );

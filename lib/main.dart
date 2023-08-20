@@ -1,3 +1,5 @@
+import 'package:coffee_shop/screens/bottom_navbar.dart';
+import 'package:coffee_shop/screens/detail_product.dart';
 import 'package:coffee_shop/screens/home_page.dart';
 import 'package:coffee_shop/screens/started_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +17,8 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const StartedPage(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) => const BottomNavBarPage(),
+        '/detail-product': (context) => const DetailProductPage(),
       },
     );
   }
